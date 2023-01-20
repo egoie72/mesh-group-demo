@@ -1,0 +1,67 @@
+databaseChangeLog:
+  - changeSet:
+      id: 01.01-01
+      author: ego@ngs.ru
+      comment: create user table
+      context: schema
+      changes:
+        - createTable:
+            tableName: user
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints: { nullable: false, primaryKey: true, primaryKeyName: pk_user }
+              - column:
+                  name: name
+                  type: varchar(500)
+              - column:
+                  name: password
+                  type: varchar(500)
+              - column:
+                  name: date_of_birth
+                  type: date
+        - createTable:
+            tableName: account
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints: { nullable: false, primaryKey: true, primaryKeyName: pk_account }
+              - column:
+                  name: user_id
+                  type: BIGINT
+              - column:
+                  name: balance
+                  type: decimal(10, 2)
+        - createTable:
+            tableName: email_data
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints: { nullable: false, primaryKey: true, primaryKeyName: pk_email_data }
+              - column:
+                  name: user_id
+                  type: BIGINT
+              - column:
+                  name: email
+                  type: varchar(200)
+        - createTable:
+            tableName: phone_data
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints: { nullable: false, primaryKey: true, primaryKeyName: pk_phone_data }
+              - column:
+                  name: user_id
+                  type: BIGINT
+              - column:
+                  name: phone
+                  type: varchar(13)
+

@@ -1,4 +1,4 @@
-package com.meshgroup.meshgroupdemo;
+package com.meshgroup.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

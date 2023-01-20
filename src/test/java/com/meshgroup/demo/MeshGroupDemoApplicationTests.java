@@ -1,4 +1,4 @@
-package com.meshgroup.meshgroupdemo;
+package com.meshgroup.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,1 +1,0 @@
-# mesh-group-demo

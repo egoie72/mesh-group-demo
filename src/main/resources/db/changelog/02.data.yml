@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: 02.01-01
+      author: ego@ngs.ru
+      comment: create data
+      context: data
+      changes:
+        - sqlFile:
+            dbms: 'postgresql'
+            endDelimiter: \nGO
+            splitStatements: true
+            path: db/scripts/data.sql
+            stripComments: false

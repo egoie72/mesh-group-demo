@@ -1,0 +1,41 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=meshgroupdemo
+    driver-class-name: org.postgresql.Driver
+    username: test
+    password: test
+    hikari:
+      driver-class-name:  org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        default_schema: meshgroupdemo
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  liquibase:
+    url: jdbc:postgresql://localhost:5432/postgres
+    user: test
+    password: test
+    contexts: schema, data
+    enabled: true
+    default-schema: meshgroupdemo
+    liquibase-schema: meshgroupdemo
+
+springdoc:
+  packagesToScan: com.meshgroup.demo.api
+  pathToMatch: /v1
+  swagger-ui:
+    path: /swagger-ui
+    operationsSorter: method
+  model-converters:
+    pageable-converter:
+      enabled: true
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type: TRACE
+    org.springframework.orm.jpa: DEBUG
+    org.springframework.transaction: DEBUG

@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:tc:postgresql:latest:///integration-tests-db
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+    hikari:
+      driver-class-name:  org.testcontainers.jdbc.ContainerDatabaseDriver
+  jpa:
+#    generate-ddl: true
+    hibernate:
+      ddl-auto: none
+#    defer-datasource-initialization: true
+  liquibase:
+    url: jdbc:tc:postgresql:latest:///integration-tests-db
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+    enabled: true
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type: TRACE
+    org.springframework.orm.jpa: DEBUG
+    org.springframework.transaction: DEBUG
